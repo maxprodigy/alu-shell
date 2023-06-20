@@ -7,9 +7,9 @@ GbasGboas() {
 	exit 0
 }
 
-trap "echo 'I hate the kill command' && killer" SIGTERM
+trap "echo 'I hate the kill command' && GbasGboas" SIGTERM
 trap "echo 'Y U no love me?!'" SIGINT
-trap "killer" SIGQUIT
+trap "GbasGboas" SIGQUIT
 echo '$$' > /var/run/myscript.pid
 while true
 do
